@@ -31,7 +31,8 @@ export async function scrapeAmazonProduct(url: string) {
     // Extract the product title
     const title = $('#productTitle').text().trim();
     const currentPrice = extractPrice(
-      $('.priceToPay span.a-price-whole'),
+     // $('.priceToPay span.a-price-whole'),
+     $('.a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay'),
       $('.a.size.base.a-color-price'),
       $('.a-button-selected .a-color-base'),
     );
@@ -44,6 +45,14 @@ export async function scrapeAmazonProduct(url: string) {
       $('.a-size-base.a-color-price')
     );
 
+/*
+<span class="a-offscreen">£329.00</span>
+<span class="a-price aok-align-center reinventPricePriceToPayMargin priceToPay" data-a-size="xl" data-a-color="base">
+<span class="a-offscreen">£329.00</span><span aria-hidden="true"><span class="a-price-symbol">£</span><span class="a-price-whole">329<span class="a-price-decimal">.</span></span><span class="a-price-fraction">00</span></span></span>
+    <span aria-hidden="true">
+    <span class="a-price-symbol">£</span>
+    <span class="a-price-whole">329<span class="a-price-decimal">.</span></span><span class="a-price-fraction">00</span></span>
+*/
     const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
     const images = 
@@ -58,10 +67,11 @@ export async function scrapeAmazonProduct(url: string) {
 
     const description = extractDescription($)
 
+
     // Construct data object with scraped information
     const data = {
       url,
-      currency: currency || '$',
+      currency: currency || '£',
       image: imageUrls[0],
       title,
       currentPrice: Number(currentPrice) || Number(originalPrice),
