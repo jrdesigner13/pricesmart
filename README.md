@@ -1,3 +1,19 @@
+# 2023 - PriceSmart - Web data scraping 
+#### This is the repository with the source code developed from a web/app using Next.js 13 with : 
+#### ReactJS
+#### Tailwind CSS
+#### Typescript
+#### MongoDB
+#### Nodemailer
+#### Cheerio
+#### Deployment with Vercel
+
+[`Preview`](https://pricesmart.vercel.app/)].
+
+<img width="1415" alt="Screenshot 2023-10-15 at 21 07 18" src="https://github.com/jrdesigner13/pricesmart/assets/38070740/64008a12-e4c0-4e03-9e3e-72108461a345">
+<img width="1426" alt="Screenshot 2023-10-15 at 21 08 22" src="https://github.com/jrdesigner13/pricesmart/assets/38070740/6f2561af-00eb-4f34-9d3a-dea64171f842">
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
